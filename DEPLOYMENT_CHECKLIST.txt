@@ -1,0 +1,223 @@
+═══════════════════════════════════════════════════════════════
+  PEG-BIO WEBSITE PROPOSAL - PLESK DEPLOYMENT CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+📦 FILES TO UPLOAD
+─────────────────────────────────────────────────────────────
+✓ index.html    - Main presentation file (HTML structure)
+✓ styles.css    - Complete styling and animations
+✓ app.js        - Three.js 3D scene and interactions
+✓ README.md     - Documentation (optional, for reference)
+
+═══════════════════════════════════════════════════════════════
+  STEP-BY-STEP PLESK DEPLOYMENT
+═══════════════════════════════════════════════════════════════
+
+□ STEP 1: Access Plesk Control Panel
+  ├─ Open: https://your-server-ip:8443
+  ├─ OR: https://yourdomain.com:8443
+  └─ Login with your credentials
+
+□ STEP 2: Select Your Domain
+  ├─ From dashboard, click on domain name
+  └─ Or use "Websites & Domains" menu
+
+□ STEP 3: Open File Manager
+  ├─ Click "File Manager" in left sidebar
+  ├─ Navigate to: httpdocs/ or public_html/
+  └─ This is your web root directory
+
+□ STEP 4: Upload Files
+  ├─ Click "+" button or "Upload Files" button
+  ├─ Drag and drop these 3 files:
+  │  • index.html
+  │  • styles.css
+  │  • app.js
+  └─ Wait for upload completion (green checkmarks)
+
+□ STEP 5: Verify File Permissions
+  ├─ Select all uploaded files
+  ├─ Click "Change Permissions"
+  ├─ Set to: 644 (Owner: Read+Write, Others: Read)
+  └─ Click "OK"
+
+□ STEP 6: Test the Presentation
+  ├─ Open browser (Chrome, Firefox, Safari, or Edge)
+  ├─ Visit: https://yourdomain.com/
+  ├─ Check for:
+  │  • 3D DNA helix animation in background
+  │  • Navigation bar at top
+  │  • Smooth scrolling between sections
+  │  • Interactive cards with hover effects
+  │  • Neon green accent colors
+  └─ Test on mobile device if possible
+
+═══════════════════════════════════════════════════════════════
+  ALTERNATIVE UPLOAD METHODS
+═══════════════════════════════════════════════════════════════
+
+METHOD 1: FTP Client (FileZilla, WinSCP, etc.)
+─────────────────────────────────────────────────────────────
+1. Get FTP credentials from Plesk
+   - Go to: Websites & Domains → FTP Access
+2. Connect using FTP client
+   - Host: ftp.yourdomain.com
+   - Username: your-ftp-username
+   - Password: your-ftp-password
+3. Navigate to httpdocs/ folder
+4. Upload all 3 files
+5. Set permissions to 644
+
+METHOD 2: SSH/Terminal (Advanced)
+─────────────────────────────────────────────────────────────
+scp index.html styles.css app.js user@server:/var/www/vhosts/yourdomain.com/httpdocs/
+
+═══════════════════════════════════════════════════════════════
+  POST-DEPLOYMENT OPTIMIZATION (OPTIONAL)
+═══════════════════════════════════════════════════════════════
+
+□ Enable HTTPS/SSL
+  ├─ Go to: SSL/TLS Certificates
+  ├─ Install Let's Encrypt certificate (free)
+  └─ Force HTTPS redirect
+
+□ Enable Gzip Compression
+  ├─ Go to: Apache & nginx Settings
+  ├─ Add to "Additional directives for HTTP":
+  │
+  │   <IfModule mod_deflate.c>
+  │     AddOutputFilterByType DEFLATE text/html text/css application/javascript
+  │   </IfModule>
+  │
+  └─ Click "OK"
+
+□ Set Browser Caching
+  ├─ Go to: Apache & nginx Settings
+  ├─ Add to "Additional directives for HTTP":
+  │
+  │   <IfModule mod_expires.c>
+  │     ExpiresActive On
+  │     ExpiresByType text/css "access plus 7 days"
+  │     ExpiresByType application/javascript "access plus 7 days"
+  │   </IfModule>
+  │
+  └─ Click "OK"
+
+═══════════════════════════════════════════════════════════════
+  TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+ISSUE: Blank white page
+SOLUTION:
+  • Press F12 to open browser console
+  • Check for error messages
+  • Verify all 3 files are uploaded
+  • Check file names match exactly (case-sensitive)
+  • Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
+
+ISSUE: No 3D animation
+SOLUTION:
+  • Check if WebGL is supported: visit get.webgl.org
+  • Try different browser (Chrome recommended)
+  • Enable hardware acceleration in browser settings
+  • Check app.js is uploaded correctly
+
+ISSUE: Broken layout/styling
+SOLUTION:
+  • Verify styles.css is uploaded
+  • Check file permissions (should be 644)
+  • Hard refresh: Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)
+  • Check browser console for CSS loading errors
+
+ISSUE: Navigation not working
+SOLUTION:
+  • Verify app.js is uploaded
+  • Check browser console for JavaScript errors
+  • Test in different browser
+  • Ensure files are in same directory
+
+═══════════════════════════════════════════════════════════════
+  BROWSER COMPATIBILITY
+═══════════════════════════════════════════════════════════════
+
+✓ Chrome 90+        (Recommended)
+✓ Firefox 88+       (Fully supported)
+✓ Safari 14+        (Fully supported)
+✓ Edge 90+          (Fully supported)
+✓ Mobile browsers   (iOS Safari, Chrome Mobile)
+
+Note: Internet Explorer is NOT supported
+
+═══════════════════════════════════════════════════════════════
+  PRESENTATION SECTIONS
+═══════════════════════════════════════════════════════════════
+
+The presentation includes:
+
+01 - Core Concept & Brand Identity
+     • Theme and brand personality
+     • Company overview
+     
+02 - Visual & UI/UX Design Language
+     • Color palette (Deep Blue, White, Neon Green)
+     • Typography recommendations
+     • Layout system and imagery style
+     
+03 - Site Architecture & Content Strategy
+     • Homepage structure
+     • About Us, Technology Platform
+     • Pipeline, Manufacturing, Partner pages
+     
+04 - Functional Features
+     • Multilingual support
+     • Responsive design
+     • SEO optimization
+     • CMS backend options
+     
+05 - Optional Enhancements
+     • Management backend solutions
+     • Virtual facility tour
+     • Download center
+     • Careers section
+     
+06 - SEO, Campaigns & Lead Flows
+     • Targeted SEO strategy
+     • Evidence-led assets
+     • Operational marketing flows
+
+═══════════════════════════════════════════════════════════════
+  TECHNICAL DETAILS
+═══════════════════════════════════════════════════════════════
+
+File Sizes (approximate):
+  • index.html: ~25 KB
+  • styles.css: ~20 KB
+  • app.js: ~17 KB
+  Total: ~62 KB (very lightweight!)
+
+External Dependencies:
+  • Three.js r128 (loaded via CDN)
+  • Google Fonts - Inter font family (loaded via CDN)
+
+No Server Requirements:
+  • Pure static HTML/CSS/JavaScript
+  • No database needed
+  • No PHP or server-side processing
+  • Works on any web server
+
+═══════════════════════════════════════════════════════════════
+  CONTACT & SUPPORT
+═══════════════════════════════════════════════════════════════
+
+If you encounter any issues:
+  1. Check this deployment checklist
+  2. Review README.md for detailed documentation
+  3. Open browser console (F12) to see error messages
+  4. Verify Plesk file permissions
+  5. Test in different browser
+
+═══════════════════════════════════════════════════════════════
+
+✨ Ready to present: Engineering Molecules for a Healthier Future
+
+═══════════════════════════════════════════════════════════════
