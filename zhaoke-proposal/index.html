@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhaoke Ophthalmology Website Proposal | Clarity Through Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Three.js Canvas Background -->
+    <canvas id="vision-canvas"></canvas>
+    
+    <!-- Vision Overlay Effect -->
+    <div id="iris-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">👁️</span>
+            <span class="brand-text">Zhaoke Ophthalmology</span>
+            <span class="brand-stock">SEHK: 6622</span>
+        </div>
+        <div class="nav-menu">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#overview" class="nav-link">Vision</a>
+            <a href="#design" class="nav-link">Design</a>
+            <a href="#platform" class="nav-link">Platform</a>
+            <a href="#pipeline" class="nav-link">Pipeline</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#investor" class="nav-link">Investor</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-lens-flare"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Website Development Proposal
+            </div>
+            <h1 class="hero-title">
+                <span class="vision-text">Zhaoke Ophthalmology</span>
+                <br>
+                <span class="clarity-gradient">Clarity Through Innovation</span>
+            </h1>
+            <p class="hero-subtitle">
+                Innovating Vision. Improving Lives.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">🔬</div>
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Major Eye Diseases</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏭</div>
+                    <div class="stat-value">7,600</div>
+                    <div class="stat-label">m² GMP Facility</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌏</div>
+                    <div class="stat-value">Global</div>
+                    <div class="stat-label">Market Reach</div>
+                </div>
+            </div>
+            <button class="cta-button primary" onclick="document.getElementById('overview').scrollIntoView({behavior: 'smooth'})">
+                <span>Explore Vision</span>
+                <span class="button-glow"></span>
+            </button>
+        </div>
+        <div class="hero-eye-model"></div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Vision</span>
+                <h2 class="section-title">Integrated Ophthalmic Excellence</h2>
+                <p class="section-subtitle">From Laboratory to Market</p>
+            </div>
+            
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="vision-card-icon">
+                        <div class="icon-circle">🔬</div>
+                    </div>
+                    <h3>Scientific Precision</h3>
+                    <p>Ophthalmology R&D credibility backed by rigorous research and clinical trials</p>
+                    <ul class="vision-list">
+                        <li>Pre-clinical through Phase III studies</li>
+                        <li>Regulatory compliance (NMPA, FDA, EU)</li>
+                        <li>Evidence-based therapeutics</li>
+                    </ul>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-card-icon">
+                        <div class="icon-circle">✨</div>
+                    </div>
+                    <h3>Visionary Leadership</h3>
+                    <p>Pioneering sight-restoring therapies for major ophthalmic conditions</p>
+                    <ul class="vision-list">
+                        <li>Innovative and generic drug portfolio</li>
+                        <li>Global partnership network</li>
+                        <li>Hong Kong Stock Exchange listed (2017)</li>
+                    </ul>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-card-icon">
+                        <div class="icon-circle">🛡️</div>
+                    </div>
+                    <h3>Transparent & Trusted</h3>
+                    <p>Global standards and regulatory compliance ensuring patient safety</p>
+                    <ul class="vision-list">
+                        <li>GMP-certified manufacturing</li>
+                        <li>Multi-region regulatory alignment</li>
+                        <li>Listed company transparency</li>
+                    </ul>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-card-icon">
+                        <div class="icon-circle">❤️</div>
+                    </div>
+                    <h3>Human Impact</h3>
+                    <p>Vision as the essence of quality of life - restoring sight, restoring futures</p>
+                    <ul class="vision-list">
+                        <li>Patient-centric approach</li>
+                        <li>Quality of life improvement</li>
+                        <li>Global accessibility focus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="company-overview">
+                <h3>About Zhaoke Ophthalmology</h3>
+                <p>Founded in 2017 and listed on the Hong Kong Stock Exchange (SEHK: 6622), Zhaoke Ophthalmology is a fully integrated ophthalmic platform spanning research & development, manufacturing, and commercialization of therapies for both front- and back-of-the-eye diseases.</p>
+                <p>With a state-of-the-art 7,600 m² GMP facility in Nansha New District, Guangzhou, Zhaoke focuses on six major eye diseases: dry eye disease (DED), myopia, presbyopia, wet age-related macular degeneration (wAMD), diabetic macular edema (DME), and glaucoma.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Language Section -->
+    <section class="section alt-bg" id="design">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Visual Identity</span>
+                <h2 class="section-title">Design Language & UI/UX</h2>
+                <p class="section-subtitle">Elegant, Clear, Trustworthy</p>
+            </div>
+            
+            <div class="design-showcase">
+                <div class="design-block">
+                    <div class="design-block-header">
+                        <span class="design-icon">🎨</span>
+                        <h3>Color Palette</h3>
+                    </div>
+                    <div class="color-palette">
+                        <div class="color-sample sky-blue">
+                            <div class="color-info">
+                                <span class="color-name">Sky Blue</span>
+                                <span class="color-hex">#4A90E2</span>
+                            </div>
+                        </div>
+                        <div class="color-sample turquoise">
+                            <div class="color-info">
+                                <span class="color-name">Turquoise</span>
+                                <span class="color-hex">#40E0D0</span>
+                            </div>
+                        </div>
+                        <div class="color-sample silver">
+                            <div class="color-info">
+                                <span class="color-name">Light Silver</span>
+                                <span class="color-hex">#C0D5E8</span>
+                            </div>
+                        </div>
+                        <div class="color-sample white">
+                            <div class="color-info">
+                                <span class="color-name">Pure White</span>
+                                <span class="color-hex">#FFFFFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="design-rationale">Evokes vision, clarity, and medical precision while maintaining a calming, professional atmosphere</p>
+                </div>
+                
+                <div class="design-block">
+                    <div class="design-block-header">
+                        <span class="design-icon">📝</span>
+                        <h3>Typography System</h3>
+                    </div>
+                    <div class="type-showcase">
+                        <div class="type-sample-large">Inter · Source Sans Pro</div>
+                        <div class="type-sample-body">Elegant, legible, and trustworthy typography that ensures optimal readability across all devices</div>
+                    </div>
+                    <p class="design-rationale">Modern sans-serif fonts provide clarity and professional trust</p>
+                </div>
+                
+                <div class="design-block">
+                    <div class="design-block-header">
+                        <span class="design-icon">🖼️</span>
+                        <h3>Imagery & Visual Style</h3>
+                    </div>
+                    <div class="imagery-tags">
+                        <span class="imagery-tag">Eye Close-ups</span>
+                        <span class="imagery-tag">Light Beams</span>
+                        <span class="imagery-tag">Optical Lenses</span>
+                        <span class="imagery-tag">Lab Work</span>
+                        <span class="imagery-tag">Patient Care</span>
+                        <span class="imagery-tag">Iris Details</span>
+                    </div>
+                    <p class="design-rationale">Visual elements reinforce ophthalmology identity and human connection</p>
+                </div>
+                
+                <div class="design-block">
+                    <div class="design-block-header">
+                        <span class="design-icon">🎬</span>
+                        <h3>Motion & Interactions</h3>
+                    </div>
+                    <div class="motion-demo">
+                        <div class="focus-blur-demo">
+                            <div class="demo-text blurring">Focus → Clarity</div>
+                        </div>
+                    </div>
+                    <p class="design-rationale">Smooth focus-blur transitions mimic vision clarity metaphor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Architecture Section -->
+    <section class="section" id="platform">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Site Architecture</span>
+                <h2 class="section-title">Comprehensive Platform Structure</h2>
+                <p class="section-subtitle">Every page designed for impact</p>
+            </div>
+            
+            <div class="platform-flow">
+                <div class="platform-card homepage">
+                    <div class="platform-card-header">
+                        <span class="platform-icon">🏠</span>
+                        <h3>Homepage</h3>
+                    </div>
+                    <div class="platform-content">
+                        <h4>Hero Tagline</h4>
+                        <p class="tagline">"Innovating Vision. Improving Lives."</p>
+                        <h4>Key Sections</h4>
+                        <ul>
+                            <li>Animated iris-to-molecule morphing background</li>
+                            <li>Integrated Ophthalmic Platform overview</li>
+                            <li>Pipeline Snapshot with phase indicators</li>
+                            <li>Manufacturing Excellence (Nansha Facility)</li>
+                            <li>Global Partnerships showcase</li>
+                            <li>Latest News & Updates feed</li>
+                        </ul>
+                        <div class="cta-preview">
+                            <button class="mini-button">Explore Pipeline</button>
+                            <button class="mini-button outline">Investor Center</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-card-header">
+                        <span class="platform-icon">🏢</span>
+                        <h3>About Us</h3>
+                    </div>
+                    <div class="platform-content">
+                        <ul>
+                            <li><strong>Company History:</strong> Founded 2017, HKEX-listed journey</li>
+                            <li><strong>Interactive Timeline:</strong> From R&D roots to market readiness</li>
+                            <li><strong>Mission & Vision:</strong> "From laboratory to market"</li>
+                            <li><strong>Core Values:</strong> Innovation, Quality, Patient Care</li>
+                            <li><strong>Leadership Team:</strong> Executive profiles with expertise</li>
+                            <li><strong>Milestones:</strong> Key achievements and regulatory wins</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-card-header">
+                        <span class="platform-icon">🔬</span>
+                        <h3>R&D / Technology</h3>
+                    </div>
+                    <div class="platform-content">
+                        <ul>
+                            <li><strong>Front & Back-of-Eye Focus:</strong> Comprehensive therapeutic approach</li>
+                            <li><strong>Interactive Visual Flow:</strong> Discovery → Clinical → Commercialization</li>
+                            <li><strong>Major Indications:</strong>
+                                <div class="indication-pills">
+                                    <span class="pill">Dry Eye (DED)</span>
+                                    <span class="pill">Myopia</span>
+                                    <span class="pill">Presbyopia</span>
+                                    <span class="pill">wAMD</span>
+                                    <span class="pill">DME</span>
+                                    <span class="pill">Glaucoma</span>
+                                </div>
+                            </li>
+                            <li><strong>Innovation Pipeline:</strong> Novel and generic drug portfolio</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="platform-card highlight">
+                    <div class="platform-card-header">
+                        <span class="platform-icon">💊</span>
+                        <h3>Pipeline</h3>
+                    </div>
+                    <div class="platform-content">
+                        <div class="pipeline-table">
+                            <div class="pipeline-header">
+                                <span>Candidate</span>
+                                <span>Indication</span>
+                                <span>Phase</span>
+                                <span>Partner</span>
+                            </div>
+                            <div class="pipeline-row">
+                                <span class="candidate-name">CsA Ophthalmic Gel</span>
+                                <span>Dry Eye Disease</span>
+                                <span><span class="phase-badge phase3">Phase III</span></span>
+                                <span>In-house</span>
+                            </div>
+                            <div class="pipeline-row">
+                                <span class="candidate-name">NVK-002</span>
+                                <span>Myopia Control</span>
+                                <span><span class="phase-badge phase3">Phase III</span></span>
+                                <span>Vyluma</span>
+                            </div>
+                            <div class="pipeline-row">
+                                <span class="candidate-name">PAN-90806</span>
+                                <span>wAMD</span>
+                                <span><span class="phase-badge phase2">Phase II</span></span>
+                                <span>PanOptica</span>
+                            </div>
+                            <div class="pipeline-row">
+                                <span class="candidate-name">BRIMOCHOL PF</span>
+                                <span>Presbyopia</span>
+                                <span><span class="phase-badge clinical">Clinical</span></span>
+                                <span>Visus Therapeutics</span>
+                            </div>
+                        </div>
+                        <p class="filter-note">Interactive filters by Therapeutic Area and Development Stage</p>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-card-header">
+                        <span class="platform-icon">🏭</span>
+                        <h3>Manufacturing</h3>
+                    </div>
+                    <div class="platform-content">
+                        <ul>
+                            <li><strong>GMP Facility Spotlight:</strong> 7,600 m² in Nansha New District, Guangzhou</li>
+                            <li><strong>3D Virtual Walkthrough:</strong> Interactive facility tour</li>
+                            <li><strong>Global Quality Standards:</strong> NMPA, EU GMP, FDA alignment</li>
+                            <li><strong>Commercial Scale:</strong> Advanced manufacturing for ophthalmic drugs</li>
+                            <li><strong>Visual Metaphor:</strong> "From lab bench to patient bedside"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-card-header">
+                        <span class="platform-icon">🤝</span>
+                        <h3>Partners</h3>
+                    </div>
+                    <div class="platform-content">
+                        <ul>
+                            <li><strong>Visus Therapeutics:</strong> Presbyopia drugs licensing ($15M upfront)</li>
+                            <li><strong>PanOptica Inc:</strong> PAN-90806 for neovascular eye diseases</li>
+                            <li><strong>Vyluma:</strong> Myopia control therapeutics</li>
+                            <li><strong>FAREVA:</strong> French CMO for manufacturing excellence</li>
+                        </ul>
+                        <p>Logos and collaboration stories showcase global partnerships</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section alt-bg" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technical Capabilities</span>
+                <h2 class="section-title">Functional Features & Enhancements</h2>
+            </div>
+            
+            <div class="features-matrix">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">🌐</span>
+                    </div>
+                    <h3>Dual Language</h3>
+                    <p>English / 中文 with seamless language switching</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">📱</span>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Optimized across desktop, tablet, and mobile devices</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">🔍</span>
+                    </div>
+                    <h3>SEO Optimized</h3>
+                    <p>"ophthalmic therapeutics China", "eye drug development"</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">🔒</span>
+                    </div>
+                    <h3>Secure & Compliant</h3>
+                    <p>HTTPS, ICP compliant hosting for Chinese market</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">⚡</span>
+                    </div>
+                    <h3>CMS Backend</h3>
+                    <p>Sanity, Strapi, or WordPress Headless for easy updates</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">🎥</span>
+                    </div>
+                    <h3>Virtual Facility Tour</h3>
+                    <p>360° walkthrough of Nansha manufacturing facility</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">📊</span>
+                    </div>
+                    <h3>Investor Portal</h3>
+                    <p>Real-time HKEX data, financial highlights, disclosures</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">📄</span>
+                    </div>
+                    <h3>Download Center</h3>
+                    <p>Regulatory filings, brochures, publications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Relations Section -->
+    <section class="section" id="investor">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">For Investors</span>
+                <h2 class="section-title">Investor Relations & Communications</h2>
+                <p class="section-subtitle">Transparency and Trust</p>
+            </div>
+            
+            <div class="investor-grid">
+                <div class="investor-card">
+                    <h3>📈 HKEX Integration</h3>
+                    <p>Live stock data feed from Hong Kong Stock Exchange</p>
+                    <ul>
+                        <li>Real-time stock price (SEHK: 6622)</li>
+                        <li>Historical performance charts</li>
+                        <li>Trading volume and market cap</li>
+                    </ul>
+                </div>
+                
+                <div class="investor-card">
+                    <h3>📊 Financial Highlights</h3>
+                    <p>Key financial metrics and performance indicators</p>
+                    <ul>
+                        <li>Quarterly and annual reports</li>
+                        <li>Revenue and growth metrics</li>
+                        <li>R&D investment breakdown</li>
+                    </ul>
+                </div>
+                
+                <div class="investor-card">
+                    <h3>📝 Regulatory Disclosures</h3>
+                    <p>Complete transparency and compliance documentation</p>
+                    <ul>
+                        <li>SEC-style announcements</li>
+                        <li>Material information updates</li>
+                        <li>Corporate governance reports</li>
+                    </ul>
+                </div>
+                
+                <div class="investor-card">
+                    <h3>🎯 Strategic Milestones</h3>
+                    <p>Pipeline progress and partnership announcements</p>
+                    <ul>
+                        <li>Clinical trial enrollments</li>
+                        <li>Regulatory approvals</li>
+                        <li>Licensing deal highlights ($15M+ upfronts)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="taglines-section">
+                <h3>Proposed Taglines</h3>
+                <div class="taglines-grid">
+                    <div class="tagline-card">"Science That Refocuses Sight"</div>
+                    <div class="tagline-card">"From Vision Research to Patient Reality"</div>
+                    <div class="tagline-card">"Precision Ophthalmology, Powered by Innovation"</div>
+                    <div class="tagline-card">"Shaping the Future of Eye Health"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="light-rays"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Bring Clarity to Your Digital Presence?</h2>
+                <p>This proposal blends corporate biotech elegance with modern vision-care innovation, creating a platform that resonates with investors, clinicians, and patients alike.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary">
+                        <span>Discuss This Proposal</span>
+                        <span class="button-glow"></span>
+                    </button>
+                    <button class="cta-button secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <span>Back to Top ↑</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="brand-icon">👁️</span>
+                    <span>Zhaoke Ophthalmology</span>
+                </div>
+                <p class="footer-text">Website Development Proposal | Clarity Through Innovation in Ophthalmology</p>
+                <p class="footer-meta">SEHK: 6622 | Founded 2017 | Guangzhou, China</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="vision-app.js"></script>
+</body>
+</html>
