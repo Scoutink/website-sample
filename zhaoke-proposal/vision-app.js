@@ -6,6 +6,8 @@
 let scene, camera, renderer;
 let iris, pupil, lightRays = [], particles = [];
 let lensRings = [];
+let retinaPattern, corneaLayers = [], bloodVessels = [];
+let neuralNetwork = [];
 let mouseX = 0, mouseY = 0;
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
@@ -17,7 +19,10 @@ let windowHalfY = window.innerHeight / 2;
 function initVisionScene() {
     // Scene
     scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0xF8FCFF, 50, 200);
+    scene.fog = new THREE.Fog(0xE8F4F8, 100, 300);
+    
+    // Add atmospheric background gradient
+    scene.background = new THREE.Color(0xF8FCFF);
 
     // Camera
     camera = new THREE.PerspectiveCamera(
@@ -38,23 +43,37 @@ function initVisionScene() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    // Enhanced Lighting for immersive feel
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
-    const pointLight1 = new THREE.PointLight(0x40E0D0, 1.5, 100);
+    const pointLight1 = new THREE.PointLight(0x40E0D0, 2, 150);
     pointLight1.position.set(30, 30, 30);
     scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0x4A90E2, 1.2, 100);
+    const pointLight2 = new THREE.PointLight(0x4A90E2, 1.8, 150);
     pointLight2.position.set(-30, -30, 20);
     scene.add(pointLight2);
 
-    const spotLight = new THREE.SpotLight(0xC0D5E8, 1, 150, Math.PI / 6, 0.5);
+    const pointLight3 = new THREE.PointLight(0xB0E0E6, 1.5, 120);
+    pointLight3.position.set(0, -40, 40);
+    scene.add(pointLight3);
+
+    const spotLight = new THREE.SpotLight(0xC0D5E8, 1.5, 200, Math.PI / 6, 0.5);
     spotLight.position.set(0, 50, 50);
     scene.add(spotLight);
+    
+    // Directional light for depth
+    const dirLight = new THREE.DirectionalLight(0x4A90E2, 0.5);
+    dirLight.position.set(50, 50, 50);
+    scene.add(dirLight);
 
-    // Create visual elements
+    // Create visual elements - Enhanced for immersion
+    createLargeBackgroundEye();
+    createRetinaPattern();
+    createCorneaLayers();
+    createBloodVessels();
+    createNeuralNetwork();
     createIrisStructure();
     createLightRays();
     createLightParticles();
@@ -67,6 +86,225 @@ function initVisionScene() {
 
     // Start animation
     animateVision();
+}
+
+// ===================================
+// Create Large Background Eye Structure
+// ===================================
+
+function createLargeBackgroundEye() {
+    const eyeGroup = new THREE.Group();
+    
+    // Large outer sphere (eyeball)
+    const eyeballGeometry = new THREE.SphereGeometry(40, 64, 64);
+    const eyeballMaterial = new THREE.MeshPhongMaterial({
+        color: 0xF8FCFF,
+        transparent: true,
+        opacity: 0.15,
+        shininess: 100,
+        side: THREE.DoubleSide
+    });
+    const eyeball = new THREE.Mesh(eyeballGeometry, eyeballMaterial);
+    eyeGroup.add(eyeball);
+    
+    // Large iris background
+    const irisGeometry = new THREE.CircleGeometry(18, 64);
+    const irisMaterial = new THREE.MeshPhongMaterial({
+        color: 0x4A90E2,
+        transparent: true,
+        opacity: 0.25,
+        side: THREE.DoubleSide,
+        shininess: 80
+    });
+    const irisBackground = new THREE.Mesh(irisGeometry, irisMaterial);
+    irisBackground.position.z = 39;
+    eyeGroup.add(irisBackground);
+    
+    // Large pupil
+    const pupilGeometry = new THREE.CircleGeometry(8, 32);
+    const pupilMaterial = new THREE.MeshBasicMaterial({
+        color: 0x0D47A1,
+        transparent: true,
+        opacity: 0.4
+    });
+    const pupilBackground = new THREE.Mesh(pupilGeometry, pupilMaterial);
+    pupilBackground.position.z = 39.5;
+    eyeGroup.add(pupilBackground);
+    
+    eyeGroup.position.set(0, 0, -80);
+    scene.add(eyeGroup);
+    scene.userData.backgroundEye = eyeGroup;
+}
+
+// ===================================
+// Create Retina Pattern
+// ===================================
+
+function createRetinaPattern() {
+    const retinaGroup = new THREE.Group();
+    
+    // Create mesh pattern like retina
+    const segments = 20;
+    const radius = 35;
+    
+    for (let i = 0; i < segments; i++) {
+        const angle = (i / segments) * Math.PI * 2;
+        
+        for (let j = 1; j < 6; j++) {
+            const r = radius * (j / 6);
+            const x = Math.cos(angle) * r;
+            const y = Math.sin(angle) * r;
+            
+            const nextAngle = ((i + 1) / segments) * Math.PI * 2;
+            const nextX = Math.cos(nextAngle) * r;
+            const nextY = Math.sin(nextAngle) * r;
+            
+            const points = [
+                new THREE.Vector3(x, y, 0),
+                new THREE.Vector3(nextX, nextY, 0)
+            ];
+            
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const material = new THREE.LineBasicMaterial({
+                color: 0x40E0D0,
+                transparent: true,
+                opacity: 0.15
+            });
+            
+            const line = new THREE.Line(geometry, material);
+            retinaGroup.add(line);
+        }
+    }
+    
+    retinaGroup.position.set(0, 0, -70);
+    scene.add(retinaGroup);
+    retinaPattern = retinaGroup;
+}
+
+// ===================================
+// Create Cornea Layers
+// ===================================
+
+function createCorneaLayers() {
+    for (let i = 0; i < 3; i++) {
+        const radius = 25 + i * 8;
+        const corneaGeometry = new THREE.SphereGeometry(radius, 32, 32, 0, Math.PI * 2, 0, Math.PI / 2);
+        const corneaMaterial = new THREE.MeshPhongMaterial({
+            color: i === 0 ? 0x40E0D0 : i === 1 ? 0x4A90E2 : 0xB0E0E6,
+            transparent: true,
+            opacity: 0.08,
+            side: THREE.DoubleSide,
+            shininess: 100
+        });
+        
+        const cornea = new THREE.Mesh(corneaGeometry, corneaMaterial);
+        cornea.position.set(20, -10, -50);
+        cornea.rotation.x = Math.PI / 6;
+        cornea.userData.speed = 0.0003 + i * 0.0001;
+        
+        scene.add(cornea);
+        corneaLayers.push(cornea);
+    }
+}
+
+// ===================================
+// Create Blood Vessels / Neural Patterns
+// ===================================
+
+function createBloodVessels() {
+    const vesselCount = 12;
+    
+    for (let i = 0; i < vesselCount; i++) {
+        const angle = (i / vesselCount) * Math.PI * 2;
+        const points = [];
+        const segments = 30;
+        
+        for (let j = 0; j < segments; j++) {
+            const t = j / segments;
+            const r = 5 + t * 40;
+            const offsetAngle = angle + Math.sin(t * Math.PI * 3) * 0.3;
+            const offsetRadius = r + Math.sin(t * Math.PI * 5) * 2;
+            
+            const x = Math.cos(offsetAngle) * offsetRadius;
+            const y = Math.sin(offsetAngle) * offsetRadius;
+            const z = Math.sin(t * Math.PI * 2) * 3;
+            
+            points.push(new THREE.Vector3(x, y, z));
+        }
+        
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const material = new THREE.LineBasicMaterial({
+            color: 0xC0D5E8,
+            transparent: true,
+            opacity: 0.2,
+            linewidth: 1
+        });
+        
+        const vessel = new THREE.Line(geometry, material);
+        vessel.position.set(-20, 15, -60);
+        scene.add(vessel);
+        bloodVessels.push(vessel);
+    }
+}
+
+// ===================================
+// Create Neural Network Pattern
+// ===================================
+
+function createNeuralNetwork() {
+    const nodeCount = 25;
+    const nodes = [];
+    
+    // Create nodes
+    for (let i = 0; i < nodeCount; i++) {
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.random() * Math.PI;
+        const radius = 30 + Math.random() * 20;
+        
+        const x = radius * Math.sin(phi) * Math.cos(theta);
+        const y = radius * Math.sin(phi) * Math.sin(theta);
+        const z = radius * Math.cos(phi) - 40;
+        
+        const nodeGeometry = new THREE.SphereGeometry(0.5, 8, 8);
+        const nodeMaterial = new THREE.MeshPhongMaterial({
+            color: 0x4A90E2,
+            transparent: true,
+            opacity: 0.6,
+            emissive: 0x4A90E2,
+            emissiveIntensity: 0.3
+        });
+        
+        const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+        node.position.set(x, y, z);
+        scene.add(node);
+        nodes.push(node);
+    }
+    
+    // Create connections
+    for (let i = 0; i < nodeCount; i++) {
+        const connections = Math.floor(Math.random() * 3) + 1;
+        
+        for (let j = 0; j < connections; j++) {
+            const targetIndex = Math.floor(Math.random() * nodeCount);
+            if (targetIndex !== i) {
+                const points = [
+                    nodes[i].position.clone(),
+                    nodes[targetIndex].position.clone()
+                ];
+                
+                const geometry = new THREE.BufferGeometry().setFromPoints(points);
+                const material = new THREE.LineBasicMaterial({
+                    color: 0x40E0D0,
+                    transparent: true,
+                    opacity: 0.15
+                });
+                
+                const connection = new THREE.Line(geometry, material);
+                scene.add(connection);
+                neuralNetwork.push(connection);
+            }
+        }
+    }
 }
 
 // ===================================
@@ -194,7 +432,7 @@ function createLightRays() {
 // ===================================
 
 function createLightParticles() {
-    const particleCount = 300;
+    const particleCount = 600; // Increased for more immersion
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
@@ -328,6 +566,29 @@ function animateVision() {
     
     const time = Date.now() * 0.0005;
     
+    // Animate background eye
+    if (scene.userData.backgroundEye) {
+        scene.userData.backgroundEye.rotation.y = Math.sin(time * 0.2) * 0.1;
+        scene.userData.backgroundEye.rotation.x = Math.cos(time * 0.15) * 0.05;
+    }
+    
+    // Animate retina pattern
+    if (retinaPattern) {
+        retinaPattern.rotation.z = time * 0.1;
+    }
+    
+    // Animate cornea layers
+    corneaLayers.forEach((cornea, index) => {
+        cornea.rotation.y += cornea.userData.speed;
+        cornea.material.opacity = 0.08 + Math.sin(time + index) * 0.02;
+    });
+    
+    // Animate blood vessels
+    bloodVessels.forEach((vessel, index) => {
+        vessel.rotation.z += 0.0002;
+        vessel.material.opacity = 0.15 + Math.sin(time * 2 + index) * 0.05;
+    });
+    
     // Animate iris group
     if (scene.userData.irisGroup) {
         scene.userData.irisGroup.rotation.z = time * 0.3;
@@ -343,7 +604,7 @@ function animateVision() {
     // Animate light rays
     lightRays.forEach((ray, index) => {
         ray.rotation.z += ray.userData.speed;
-        ray.material.opacity = 0.2 + Math.sin(time + index) * 0.1;
+        ray.material.opacity = 0.25 + Math.sin(time + index) * 0.1;
     });
     
     // Animate lens rings
@@ -406,8 +667,24 @@ function onWindowResize() {
 // ===================================
 
 function initNavigation() {
+    const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section, .hero');
+    
+    // Floating navbar on scroll
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Add scrolled class when scrolled down
+        if (currentScroll > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
     
     // Smooth scroll
     navLinks.forEach(link => {
