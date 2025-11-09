@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peg-Bio Website Proposal | Engineering Molecules for a Healthier Future</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Three.js Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">🧬</span>
+            <span class="brand-text">Peg-Bio Website Proposal</span>
+        </div>
+        <div class="nav-menu">
+            <a href="#overview" class="nav-link active">Overview</a>
+            <a href="#design" class="nav-link">Design</a>
+            <a href="#architecture" class="nav-link">Architecture</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#enhancements" class="nav-link">Enhancements</a>
+            <a href="#seo" class="nav-link">Marketing</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Website Development Proposal</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Peg-Bio Biopharm</span>
+                <br>Digital Transformation
+            </h1>
+            <p class="hero-subtitle">
+                Engineering Molecules for a Healthier Future
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Core Sections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
+            </div>
+            <button class="cta-button" onclick="document.getElementById('overview').scrollIntoView({behavior: 'smooth'})">
+                Explore Proposal
+                <span class="arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Core Concept & Brand Identity</h2>
+            </div>
+            <div class="molecular-card">
+                <div class="card-content">
+                    <h3 class="card-title">Theme: "Engineering Molecules for a Healthier Future"</h3>
+                    <div class="brand-personality">
+                        <div class="personality-item">
+                            <div class="personality-icon">🔬</div>
+                            <h4>Scientific Precision</h4>
+                            <p>Research credibility and evidence-based approach</p>
+                        </div>
+                        <div class="personality-item">
+                            <div class="personality-icon">💡</div>
+                            <h4>Innovation-Driven</h4>
+                            <p>Biotech R&D leadership and cutting-edge technology</p>
+                        </div>
+                        <div class="personality-item">
+                            <div class="personality-icon">✨</div>
+                            <h4>Clean & Professional</h4>
+                            <p>Meets global biotech standards</p>
+                        </div>
+                        <div class="personality-item">
+                            <div class="personality-icon">🛡️</div>
+                            <h4>Trustworthy</h4>
+                            <p>GMP certified, transparent operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="company-info">
+                <h3>About Peg-Bio Biopharm</h3>
+                <p>Chongqing Peg-Bio Biopharm Co., Ltd. is a national high-tech enterprise specializing in gene engineering and recombinant protein/peptide drug development. Founded in 2013, they focus on metabolic and endocrine disorders, offering full-stack capabilities from strain engineering to GMP manufacturing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Language Section -->
+    <section class="section" id="design">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Visual & UI/UX Design Language</h2>
+            </div>
+            <div class="design-grid">
+                <div class="design-card">
+                    <div class="design-header">
+                        <div class="design-icon">🎨</div>
+                        <h3>Color Palette</h3>
+                    </div>
+                    <div class="color-swatches">
+                        <div class="swatch" style="background: #0A2463;">
+                            <span>Deep Blue</span>
+                        </div>
+                        <div class="swatch" style="background: #FFFFFF; color: #000;">
+                            <span>Pure White</span>
+                        </div>
+                        <div class="swatch" style="background: #00FFB3;">
+                            <span>Neon Green</span>
+                        </div>
+                    </div>
+                    <p>Suggests purity, innovation, and scientific excellence</p>
+                </div>
+                <div class="design-card">
+                    <div class="design-header">
+                        <div class="design-icon">📝</div>
+                        <h3>Typography</h3>
+                    </div>
+                    <div class="typography-sample">
+                        <p class="type-primary">Inter / Roboto</p>
+                        <p class="type-secondary">IBM Plex Sans</p>
+                    </div>
+                    <p>Modern sans-serif fonts: clean, legible, and globally recognized</p>
+                </div>
+                <div class="design-card">
+                    <div class="design-header">
+                        <div class="design-icon">📐</div>
+                        <h3>Layout System</h3>
+                    </div>
+                    <div class="layout-preview">
+                        <div class="grid-demo"></div>
+                    </div>
+                    <p>Wide, minimalist grid with large visuals for a confident, advanced feel</p>
+                </div>
+                <div class="design-card">
+                    <div class="design-header">
+                        <div class="design-icon">🖼️</div>
+                        <h3>Imagery Style</h3>
+                    </div>
+                    <div class="imagery-tags">
+                        <span class="tag">Macro Cellular</span>
+                        <span class="tag">Gene Chains</span>
+                        <span class="tag">Lab Devices</span>
+                        <span class="tag">3D Molecules</span>
+                    </div>
+                    <p>Visual connection to biotech R&D and molecular engineering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Architecture Section -->
+    <section class="section" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Site Architecture & Content Strategy</h2>
+            </div>
+            <div class="architecture-flow">
+                <div class="page-module">
+                    <div class="module-header">
+                        <span class="module-icon">🏠</span>
+                        <h3>Homepage</h3>
+                    </div>
+                    <ul class="module-list">
+                        <li>Hero: "Advancing Peptide and Protein Therapeutics through Genetic Engineering"</li>
+                        <li>Animated DNA helix background</li>
+                        <li>CTAs: "Explore Our Pipeline" & "Partner With Us"</li>
+                        <li>Highlight: Technology Platform, Pipeline Snapshot, Manufacturing Excellence</li>
+                    </ul>
+                </div>
+                <div class="page-module">
+                    <div class="module-header">
+                        <span class="module-icon">🧪</span>
+                        <h3>About Us</h3>
+                    </div>
+                    <ul class="module-list">
+                        <li>Company story: founded in Chongqing, rooted in molecular biology</li>
+                        <li>Timeline visualization (2013 → present)</li>
+                        <li>Mission: "We translate molecular design into therapeutic reality"</li>
+                        <li>Leadership team profiles</li>
+                    </ul>
+                </div>
+                <div class="page-module">
+                    <div class="module-header">
+                        <span class="module-icon">⚙️</span>
+                        <h3>Technology Platform</h3>
+                    </div>
+                    <ul class="module-list">
+                        <li>Recombinant protein expression systems</li>
+                        <li>Peptide engineering & optimization</li>
+                        <li>Gene strain construction & screening</li>
+                        <li>Scale-up fermentation & purification</li>
+                        <li>Interactive diagrams: Gene → Protein → Drug Candidate</li>
+                    </ul>
+                </div>
+                <div class="page-module">
+                    <div class="module-header">
+                        <span class="module-icon">🔬</span>
+                        <h3>Pipeline</h3>
+                    </div>
+                    <ul class="module-list">
+                        <li>Drug candidate cards with filterable timeline</li>
+                        <li>Example: PB-001 (GLP-1 Analog for Type 2 Diabetes - Phase I)</li>
+                        <li>Filter by Therapeutic Area and Development Stage</li>
+                        <li>Visual phase progression indicators</li>
+                    </ul>
+                </div>
+                <div class="page-module">
+                    <div class="module-header">
+                        <span class="module-icon">🏭</span>
+                        <h3>Manufacturing</h3>
+                    </div>
+                    <ul class="module-list">
+                        <li>GMP facilities showcase with cleanroom photos</li>
+                        <li>Certifications: ISO, CFDA compliance</li>
+                        <li>Process validation expertise</li>
+                        <li>Visual: "From lab bench to clinical batches"</li>
+                    </ul>
+                </div>
+                <div class="page-module">
+                    <div class="module-header">
+                        <span class="module-icon">🤝</span>
+                        <h3>Partner With Us</h3>
+                    </div>
+                    <ul class="module-list">
+                        <li>Co-development opportunities</li>
+                        <li>Contract manufacturing (CDMO)</li>
+                        <li>Licensing & research alliances</li>
+                        <li>Embedded contact form with partnership categories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Functional Features</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multilingual Support</h3>
+                    <p>Language picker: English / 中文 with easy expansion to additional languages</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Fully Responsive</h3>
+                    <p>Optimized for desktop, tablet, and mobile devices with adaptive layouts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>SEO Optimized</h3>
+                    <p>Meta keywords: "recombinant protein", "peptide drug", "biopharma CDMO China"</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>CMS Backend</h3>
+                    <p>Easy updates with WordPress, Sanity, or Strapi integration</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Security First</h3>
+                    <p>HTTPS enabled, Chinese ICP license compliance for domestic hosting</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Micro-interactions</h3>
+                    <p>Smooth hover animations on product and pipeline cards for enhanced UX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhancements Section -->
+    <section class="section" id="enhancements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Optional Enhancements</h2>
+            </div>
+            <div class="enhancements-list">
+                <div class="enhancement-item">
+                    <div class="enhancement-number">01</div>
+                    <div class="enhancement-content">
+                        <h3>Management Backend Solutions</h3>
+                        <p>CRM, Research & Documentation Management, ERP integration for streamlined operations</p>
+                    </div>
+                </div>
+                <div class="enhancement-item">
+                    <div class="enhancement-number">02</div>
+                    <div class="enhancement-content">
+                        <h3>Virtual Facility Tour</h3>
+                        <p>360° lab walkthrough showcasing cleanrooms, equipment, and manufacturing capabilities</p>
+                    </div>
+                </div>
+                <div class="enhancement-item">
+                    <div class="enhancement-number">03</div>
+                    <div class="enhancement-content">
+                        <h3>Download Center</h3>
+                        <p>Brochures, white papers, safety certifications, and technical documentation</p>
+                    </div>
+                </div>
+                <div class="enhancement-item">
+                    <div class="enhancement-number">04</div>
+                    <div class="enhancement-content">
+                        <h3>Careers Section</h3>
+                        <p>Highlight company culture and biotech R&D opportunities for talent acquisition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO & Marketing Section -->
+    <section class="section" id="seo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">SEO, Campaigns & Lead Flows</h2>
+            </div>
+            <div class="marketing-modules">
+                <div class="marketing-card">
+                    <h3>🎯 Targeted SEO Layer</h3>
+                    <p>Technical & on-page optimization for priority clinical and economic search queries</p>
+                    <ul>
+                        <li>Keyword research for biotech industry terms</li>
+                        <li>Schema markup for scientific content</li>
+                        <li>Technical SEO audit and optimization</li>
+                    </ul>
+                </div>
+                <div class="marketing-card">
+                    <h3>📄 Evidence-Led Assets</h3>
+                    <p>Professional materials to support sales and partnership efforts</p>
+                    <ul>
+                        <li>Product briefs and capability statements</li>
+                        <li>Clinical/application one-pagers</li>
+                        <li>FAQ and objection handler documents</li>
+                        <li>Short pitch decks for partnerships</li>
+                    </ul>
+                </div>
+                <div class="marketing-card">
+                    <h3>🔄 Operational Marketing Flows</h3>
+                    <p>Forms, routing, and nurture campaigns your team can run</p>
+                    <ul>
+                        <li>Lead capture forms with smart routing</li>
+                        <li>Email nurture sequences</li>
+                        <li>LinkedIn campaign templates</li>
+                        <li>Analytics and conversion tracking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="taglines">
+                <h3>Proposed Taglines</h3>
+                <div class="tagline-grid">
+                    <div class="tagline">"Reimagining Biotech Through Genetic Precision"</div>
+                    <div class="tagline">"From Gene to Cure"</div>
+                    <div class="tagline">"Engineering the Future of Peptide Therapeutics"</div>
+                    <div class="tagline">"Innovate. Manufacture. Heal."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Digital Presence?</h2>
+                <p>This proposal combines corporate biotech elegance with innovative research lab aesthetics — clean, global, investor-friendly, and focused on molecular visuals.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary">Discuss This Proposal</button>
+                    <button class="cta-button secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top ↑</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Peg-Bio Biopharm Website Development Proposal | Engineering Molecules for a Healthier Future</p>
+            <p class="footer-note">This presentation uses three.js for interactive 3D molecular visualizations</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
